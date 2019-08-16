@@ -3,6 +3,10 @@
   "displayName": "barreler",
   "description": "",
   "version": "0.0.1",
+  "publisher": "shinruchan",
+  "repository": {
+    "url": "https://github.com/Shinruchan/vscode-barreler.git"
+  },
   "engines": {
     "vscode": "^1.36.0"
   },
