@@ -1,6 +1,5 @@
 import * as vscode from "vscode";
-import { parseFiles } from "./parser";
-import { exportExportables } from "./exporter";
+import { parseFiles, exportExportables } from "barreler";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(

@@ -1,12 +1,13 @@
 {
-  "name": "barreler",
-  "displayName": "barreler",
+  "name": "vscode-barreler",
+  "displayName": "Barreler",
   "description": "",
   "version": "0.0.1",
   "publisher": "shinruchan",
   "repository": {
     "url": "https://github.com/Shinruchan/vscode-barreler.git"
   },
+  "icon": "barrel.png",
   "engines": {
     "vscode": "^1.36.0"
   },
@@ -82,6 +83,6 @@
     "vscode-test": "^1.0.2"
   },
   "dependencies": {
-    "@danielberndt/match-all": "^1.0.0"
+    "barreler": "0.0.1"
   }
 }
