@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
-import { parseFiles, exportExportables } from "barreler";
+import { barrel } from "barreler";
+import { BarrelerOptions } from "barreler/lib/barreler";
 
 export function activate(context: vscode.ExtensionContext) {
   const disposable = vscode.commands.registerCommand(
@@ -13,10 +14,17 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 const processFilesOrDirectories = async (list: any[]) => {
-  const files = list.map(file => file.fsPath);
-  const exportables = await parseFiles(files);
+  const config = vscode.workspace.getConfiguration("barreler");
 
-  await exportExportables(exportables);
+  const options: Partial<BarrelerOptions> = {};
+
+  if (config.get("mode")) options.mode = config.get("mode");
+  if (config.get("include")) options.include = config.get("include");
+  if (config.get("exclude")) options.exclude = config.get("exclude");
+
+  const files = list.map(file => file.fsPath);
+
+  await barrel(files, options);
 
   await vscode.window.showInformationMessage("Barrel files generated.");
 };

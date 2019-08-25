@@ -62,27 +62,52 @@
           "group": "2_workspace"
         }
       ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Barreler",
+      "properties": {
+        "barreler.mode": {
+          "type": "string",
+          "default": null,
+          "enum": [
+            "multifile-index",
+            "all-level-index"
+          ],
+          "markdownEnumDescription": [
+            "Generates index file on lever where there is more than 1 file to export from.",
+            "Generates index file on file level and exports file exports into this index."
+          ],
+          "markdownDescription": "Index creation mode."
+        },
+        "barreler.include": {
+          "type": "array",
+          "default": null,
+          "markdownDescription": "Files to include."
+        },
+        "barreler.exclude": {
+          "type": "array",
+          "default": null,
+          "markdownDescription": "Files to exclude."
+        }
+      }
     }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile",
-    "test": "node ./out/test/runTest.js"
+    "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
-    "@types/mocha": "^5.2.6",
     "@types/node": "^10.12.21",
     "@types/vscode": "^1.36.0",
     "glob": "^7.1.4",
-    "mocha": "^6.1.4",
     "typescript": "^3.3.1",
     "tslint": "^5.12.1",
     "vscode-test": "^1.0.2"
   },
   "dependencies": {
-    "barreler": "0.0.1"
+    "barreler": "0.0.5"
   }
 }
