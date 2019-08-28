@@ -1,7 +1,7 @@
 {
   "name": "vscode-barreler",
   "displayName": "Barreler",
-  "description": "",
+  "description": "One click generator for barrel (index export) files for JavaScript and TypeScript.",
   "version": "0.0.1",
   "publisher": "shinruchan",
   "repository": {
