@@ -1,8 +1,9 @@
 import * as vscode from "vscode";
-import { barrel } from "barreler";
-import { BarrelerOptions } from "barreler/lib/barreler";
+import { barrel } from "barreler/lib";
+import type { BarrelerOptions } from "barreler/lib/barreler";
 
 export function activate(context: vscode.ExtensionContext) {
+  console.log("activating");
   const disposable = vscode.commands.registerCommand(
     "barreler.generateBarrels",
     (_, selectedFilesOrDirectories) => {
@@ -22,7 +23,7 @@ const processFilesOrDirectories = async (list: any[]) => {
   if (config.get("include")) options.include = config.get("include");
   if (config.get("exclude")) options.exclude = config.get("exclude");
 
-  const files = list.map(file => file.fsPath);
+  const files = list.map((file) => file.fsPath);
 
   await barrel(files, options);
 
