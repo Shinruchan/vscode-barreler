@@ -20,6 +20,9 @@ const processFilesOrDirectories = async (list: any[]) => {
   const options: Partial<BarrelerOptions> = {};
 
   if (config.get("mode")) options.mode = config.get("mode");
+  if (config.get("extensions")) options.extensions = config.get("extensions");
+  if (config.get("custom-extension"))
+    options.customExtension = config.get("custom-extension");
   if (config.get("include")) options.include = config.get("include");
   if (config.get("exclude")) options.exclude = config.get("exclude");
 

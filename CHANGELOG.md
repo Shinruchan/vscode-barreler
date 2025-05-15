@@ -1,5 +1,11 @@
 # Change Log
 
+## v0.0.3
+
+ - Add __snapshots__ as excluded path
+ - Add extension modes to settings
+ - Bugfixes
+
 ## v0.0.2
 
 - Bugfixes
