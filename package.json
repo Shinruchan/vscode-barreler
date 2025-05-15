@@ -2,7 +2,7 @@
   "name": "vscode-barreler",
   "displayName": "Barreler",
   "description": "One click generator for barrel (index export) files for JavaScript and TypeScript.",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "shinruchan",
   "repository": {
     "url": "https://github.com/Shinruchan/vscode-barreler.git"
@@ -80,6 +80,26 @@
           ],
           "markdownDescription": "Index creation mode."
         },
+        "barreler.extensions": {
+          "type": "string",
+          "default": "none",
+          "enum": [
+            "none",
+            "same-as-file",
+            "custom"
+          ],
+          "markdownEnumDescriptions": [
+            "no added extensions, if file ./file.ts, generates: export {} from './file'",
+            "same extension as file, if file ./file.ts, generates: export {} from './file.ts'",
+            "uses custom-extension as extension, if file ./file.ts and custom-extension is 'mjs', generates: export {} from './file.mjs"
+          ],
+          "markdownDescription": "Export from file extension mode"
+        },
+        "barreler.custom-extension": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Custom extension when extensions='custom', example: 'js' or 'mjs' or ..."
+        },
         "barreler.include": {
           "type": "array",
           "default": null,
@@ -107,6 +127,6 @@
     "vscode-test": "^1.6.1"
   },
   "dependencies": {
-    "barreler": "0.0.8"
+    "barreler": "0.0.9"
   }
 }
