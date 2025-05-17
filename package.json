@@ -2,7 +2,7 @@
   "name": "vscode-barreler",
   "displayName": "Barreler",
   "description": "One click generator for barrel (index export) files for JavaScript and TypeScript.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "shinruchan",
   "repository": {
     "url": "https://github.com/Shinruchan/vscode-barreler.git"
@@ -127,6 +127,6 @@
     "vscode-test": "^1.6.1"
   },
   "dependencies": {
-    "barreler": "0.0.9"
+    "barreler": "0.0.11"
   }
 }
